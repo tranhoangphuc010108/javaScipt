@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng ứng dụng ToDo List với chức năng thêm, sửa, và xóa nhiệm vụ.</title>
+</head>
+
+<body>
+    <h1 id="header">Thêm nhiệm vụ</h1>
+
+    <input type="text" id="taskInPut" placeholder="Nhập nhiệm vụ" />
+    <button id="addButton" onclick="addTask()">thêm</button>
+
+    <table border="1" style="border-collapse: collapse; text-align:center;" id="taskTable">
+        <tr>
+            <th>STT</th>
+            <th>Nhiệm vụ</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </table>
+
+    <script>
+        let tasks = [];
+        let editIndex = -1;
+
+        function addTask() {
+            let input = document.getElementById("taskInPut").value.trim();
+
+            if (input === "") {
+                alert("Xin nhập vào nhiệm vụ");
+                return;
+            }
+            if (editIndex !== -1) {
+                tasks[editIndex] = input;
+                editIndex = -1;
+
+                document.getElementById("header").innerHTML = "Thêm nhiệm vụ";
+                document.getElementById("addButton").innerHTML = "Thêm";
+
+            } else {
+                tasks.push(input);
+
+            }
+            document.getElementById("taskInPut").value = "";
+            displayTasks();
+        }
+
+        function displayTasks() {
+            let tableContent = `
+                <tr>
+                    <th>STT</th>
+                    <th>Nhiệm vụ</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            `;
+            tasks.forEach((task, index) => {
+                tableContent += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${task}</td>
+                        <td><button onclick="editTask(${index})">Edit</button></td>
+                        <td><button onclick="deleteTask(${index})">Delete</button></td>
+                    </tr>
+                `;
+            });
+            document.getElementById("taskTable").innerHTML = tableContent;
+        }
+        //chỉnh sửa nv
+        function editTask(index) {
+            document.getElementById("taskInPut").value = tasks[index];
+            editIndex = index;
+            document.getElementById("header").innerHTML = "Chỉnh sửa nhiệm vụ";
+            document.getElementById("addButton").innerHTML = "Lưu";
+        }
+        //xóa nv
+        function deleteTask(index) {
+            let confilmDelete = confirm("Bạn có chắc muốn xóa không");
+            if (confilmDelete) {
+                tasks.splice(index, 1);
+                displayTasks();
+            }
+        } 
+        // Hiển thị danh sách nhiệm vụ khi tải trang
+        displayTasks();
+    </script>
+
+
+</body>
+
+</html>

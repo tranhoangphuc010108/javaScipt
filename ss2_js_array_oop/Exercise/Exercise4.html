@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ứng dụng Quản lý Sản phẩm & Giỏ hàng</title>
+  
+</head>
+<body>
+  <h1>Ứng dụng Quản lý Sản phẩm</h1>
+
+  <div class="section">
+    <h2>Form đăng ký sản phẩm</h2>
+    <input type="text" id="productName" placeholder="Tên sản phẩm">
+    <input type="number" id="productPrice" placeholder="Giá">
+    <input type="number" id="productQuantity" placeholder="Số lượng">
+    <button onclick="addProduct()">Thêm sản phẩm</button>
+  </div>
+
+  <div class="section">
+    <h2>Danh sách sản phẩm <button onclick="toggleCart()">Giỏ hàng</button></h2>
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Tên sản phẩm</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="section" id="cartSection" style="display: none">
+    <h2>Giỏ hàng</h2>
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Tên sản phẩm</th>
+          <th>Số lượng</th>
+          <th>Tổng giá</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    let products = [];
+    let cart = [];
+
+    function addProduct() {
+      const name = document.getElementById("productName").value.trim();
+      const price = parseFloat(document.getElementById("productPrice").value);
+      const quantity = parseInt(document.getElementById("productQuantity").value);
+
+      if (!name || isNaN(price) || isNaN(quantity) || price < 0 || quantity < 0) {
+        alert("Vui lòng nhập đầy đủ và hợp lệ thông tin sản phẩm.");
+        return;
+      }
+
+      products.push({ name, price, quantity });
+      document.getElementById("productName").value = "";
+      document.getElementById("productPrice").value = "";
+      document.getElementById("productQuantity").value = "";
+      renderProductTable();
+      alert("Thêm sản phẩm thành công!");
+    }
+
+    function renderProductTable() {
+      const tbody = document.querySelector("#productTable tbody");
+      tbody.innerHTML = "";
+      products.forEach((product, index) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${product.name}</td>
+          <td>${product.price}</td>
+          <td>${product.quantity}</td>
+          <td>
+            <button onclick="editProduct(${index})">Sửa</button>
+            <button onclick="deleteProduct(${index})">Xóa</button>
+            <button onclick="buyProduct(${index})">Mua hàng</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function editProduct(index) {
+      const product = products[index];
+      const newName = prompt("Nhập tên mới:", product.name);
+      const newPrice = parseFloat(prompt("Nhập giá mới:", product.price));
+      const newQuantity = parseInt(prompt("Nhập số lượng mới:", product.quantity));
+      if (newName && !isNaN(newPrice) && !isNaN(newQuantity)) {
+        products[index] = { name: newName, price: newPrice, quantity: newQuantity };
+        renderProductTable();
+      }
+    }
+
+    function deleteProduct(index) {
+      if (confirm("Bạn có chắc muốn xóa sản phẩm này?")) {
+        products.splice(index, 1);
+        renderProductTable();
+      }
+    }
+
+    function buyProduct(index) {
+      const product = products[index];
+      if (product.quantity <= 0) {
+        alert("Sản phẩm đã hết hàng");
+        return;
+      }
+      const cartItem = cart.find(item => item.name === product.name);
+      if (cartItem) {
+        if (product.quantity === 0) return alert("Không đủ sản phẩm trong kho");
+        cartItem.quantity++;
+      } else {
+        cart.push({ name: product.name, price: product.price, quantity: 1 });
+      }
+      product.quantity--;
+      renderProductTable();
+      renderCart();
+    }
+
+    function renderCart() {
+      const tbody = document.querySelector("#cartTable tbody");
+      tbody.innerHTML = "";
+      cart.forEach((item, index) => {
+        const total = item.price * item.quantity;
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${item.name}</td>
+          <td>${item.quantity}</td>
+          <td>${total}</td>
+          <td>
+            <button onclick="increaseCart(${index})">+</button>
+            <button onclick="decreaseCart(${index})">-</button>
+            <button onclick="removeFromCart(${index})">Xóa</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function increaseCart(index) {
+      const item = cart[index];
+      const product = products.find(p => p.name === item.name);
+      if (product.quantity <= 0) return alert("Không đủ sản phẩm trong kho");
+      item.quantity++;
+      product.quantity--;
+      renderCart();
+      renderProductTable();
+    }
+
+    function decreaseCart(index) {
+      const item = cart[index];
+      if (item.quantity <= 1) return;
+      const product = products.find(p => p.name === item.name);
+      item.quantity--;
+      product.quantity++;
+      renderCart();
+      renderProductTable();
+    }
+
+    function removeFromCart(index) {
+      const item = cart[index];
+      const product = products.find(p => p.name === item.name);
+      product.quantity += item.quantity;
+      cart.splice(index, 1);
+      renderCart();
+      renderProductTable();
+    }
+
+    function toggleCart() {
+      const section = document.getElementById("cartSection");
+      section.style.display = section.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</body>
+</html>

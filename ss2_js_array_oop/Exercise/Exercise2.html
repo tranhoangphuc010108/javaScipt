@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng ứng dụng từ điển đơn giản bằng JavaScript và HTML, cho phép tra cứu từ tiếng Anh sang tiếng Việt.
+    </title>
+</head>
+
+<body>
+    <h1>Từ điển tiếng anh - tiếng việt</h1>
+
+    <input type="text" id="wordInPut" placeholder="Nhập từ tiếng anh">
+    <button onclick="translate()">dịch sang việt</button>
+    <p id="result"></p>
+    <script>
+        var englishWord = ["fish", "dog", "cat", "snake"]
+        var vietNamWord = ["cá", "chó", "mèo", "rắn"]
+
+        function translate() {
+            debugger
+            var wordToTranslate = document.getElementById("wordInPut").value.trim();
+
+            if (wordToTranslate === "") {
+                document.getElementById("result").innerHTML = "Xin nhập vào từ tiếng anh";
+                return;
+            }
+            var index = englishWord.indexOf(wordToTranslate);
+
+            if(index !== -1) {
+                document.getElementById("result").innerHTML = vietNamWord[index];
+            } else {
+                document.getElementById("result").innerHTML = "Không có trong từ điển của tôi";
+            }
+        }
+    </script>
+</body>
+</html>
