@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,34,8,9,10]
+
+        console.log(arr);
+//push: thêm phần tử vào cuối mảng
+        arr.push(6);
+        console.log(arr);
+
+        //pop: xóa phần tử cuối mảng
+        arr.pop();
+        console.log(arr);
+
+        //shift: xóa phần tử đầu mảng
+        arr.shift();
+        console.log(arr);
+
+        //sort: sắp xếp mảng
+        arr.sort((a, b) => a - b);
+        console.log(arr);
+
+        //join: nối các phần tử của mảng thành một chuỗi
+
+    let str = arr.join(",");
+    console.log(str);
+
+    //split: tách chuỗi thành một mảng: split(" ") ở ô trống là xóa phần tử đó ra
+    let arr2 = "1 2 3 4 5 6 7 8 9 10".split(" ").map(function (item) {
+
+    
+    return + item * 3;
+    });
+    console.log(arr2);
+
+ 
+
+    //splice: thêm , xóa, chèn
+
+    // vị trí đầu tiên là vị trí số bạn muốn xóa
+    // vị trí thứ hai là số lượng phần tử bạn muốn xóa
+    // vị trí thứ ba là phần tử bạn muốn thêm
+    arr.splice(2, 3, 100, 200, 300);
+    console.log(arr);
+
+    //map: trả về một mảng mới với kết quả của hàm callback
+ 
+    </script>
+</body>
+</html>

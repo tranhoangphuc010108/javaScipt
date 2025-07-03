@@ -1,0 +1,47 @@
+/* Reset margin và padding cho h1, p, ul */
+h1, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Hoặc có thể reset riêng từng thẻ */
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset cho li bên trong ul */
+ul li {
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS để tùy chỉnh khoảng cách sau khi reset */
+h1 {
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    padding: 10px 0; /* Padding trên dưới */
+}
+
+p {
+    margin-bottom: 15px; /* Khoảng cách giữa các đoạn */
+    line-height: 1.6; /* Chiều cao dòng */
+}
+
+ul {
+    margin-left: 20px; /* Thụt lề trái cho danh sách */
+}
+
+ul li {
+    margin-bottom: 8px; /* Khoảng cách giữa các mục */
+    padding-left: 10px; /* Thụt lề cho bullet point */
+} 

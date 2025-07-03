@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // this.name = "Hello world";
+
+
+
+        //    console.log(this.name);
+        //    console.log(window.name);
+
+        function showInfo(address, phone) {
+            console.log(this.name);
+            console.log(address);
+            console.log(phone);
+        }
+
+        const student = {
+            id: 1,
+            name: "John",
+            score: 10,
+        }
+
+        // showInfo();
+        // showInfo.call(student, "Hello world", "23244");
+        // showInfo.apply(student, ["He world", "23244"]);
+        const showInfoStudent = showInfo.bind(student, "Hello world", "23244");
+        showInfoStudent();
+        showInfoStudent();
+    </script>
+</body>
+
+</html>

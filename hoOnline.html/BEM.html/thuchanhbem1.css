@@ -1,0 +1,28 @@
+
+body > div {
+/*  sẽ chỉ áp dụng cho những <div> là con trực tiếp của <body>, */
+    margin: auto;
+    /* có nghĩa là margin tự động được căn giữa theo chiều ngang */
+}
+.btn {
+    display: inline-block;
+    /* tác dụng là để cho các button nằm ngang với nhau */
+
+    text-decoration: none;
+    /* tác dụng là để cho các button không có gạch chân */
+
+    background-color: transparent;
+    /* tác dụng là để cho các button không có màu nền */
+
+    border: none;
+    /* tác dụng là để cho các button không có viền */
+
+    cursor: pointer;
+    /* tác dụng là để cho các button có thể click được */
+
+    padding: 10px 20px;
+    /* tác dụng là để cho các button có khoảng cách giữa các button */
+
+    border-radius: 5px;
+    /* tác dụng là để cho các button có góc bo tròn */
+}

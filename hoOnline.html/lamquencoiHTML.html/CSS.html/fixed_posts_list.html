@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Posts List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        .posts-list {
+            margin-top: 32px; /* ✅ Thêm margin top 32px */
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        .post-item {
+            padding: 12px 14px;
+            border: 2px solid #ccc;
+            margin-bottom: 16px; /* ✅ Thêm margin bottom 16px */
+            border-radius: 16px; /* Bo tròn góc 16px */
+        }
+
+        .post-item .heading {
+            font-size: 2.8rem;
+        }
+
+        .post-item .title a {
+            color: #333;
+            font-size: 2rem;
+            text-decoration: none;
+        }
+
+        .post-item .desc {
+            font-size: 1.6rem;
+            color: #444;
+            margin-top: 10px; /* ✅ Thêm margin top 10px */
+        }
+
+        .post-item .min-read {
+            font-size: 1.4rem;
+            color: #666;
+            margin-top: 12px; /* ✅ Thêm margin top 12px */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="posts-list">
+            <div class="post-item">
+                <div class="heading">
+                    <div class="title">
+                        <a href="#">Getting Started with CSS</a>
+                    </div>
+                </div>
+                <div class="desc">
+                    Learn the basics of CSS styling and how to create beautiful web pages.
+                </div>
+                <div class="min-read">5 min read</div>
+            </div>
+            
+            <div class="post-item">
+                <div class="heading">
+                    <div class="title">
+                        <a href="#">JavaScript Fundamentals</a>
+                    </div>
+                </div>
+                <div class="desc">
+                    Explore the core concepts of JavaScript programming language.
+                </div>
+                <div class="min-read">8 min read</div>
+            </div>
+            
+            <div class="post-item">
+                <div class="heading">
+                    <div class="title">
+                        <a href="#">HTML Best Practices</a>
+                    </div>
+                </div>
+                <div class="desc">
+                    Discover the best practices for writing clean, semantic HTML code.
+                </div>
+                <div class="min-read">6 min read</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            background-color: #333;
+            padding: 10px;
+            margin: 5px;
+            color: white;
+        }
+        
+        .box2 {
+            background-color: red;
+            padding: 10px;
+            margin: 5px;
+            color: white;
+        }
+        
+        .box3 {
+            background-color: blue;
+            /* top: bên trên
+            right: bên phải
+            bottom: bên dưới
+            left: bên trái */
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            margin: 5px;
+            color: white;
+            position: absolute;
+
+            /* nếu padding có 1 giá trị thì nó sẽ áp dụng cho tất cả 4 cạnh
+            
+            và nếu: padding: 10px 20px 30px 40px thì nó sẽ áp dụng cho top: 10px, right: 20px, bottom: 30px, left: 40px*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">Box 1</div>
+    <div class="box2">Box 2</div>
+    <div class="box3">Box 3</div>
+</body>
+
+</html>

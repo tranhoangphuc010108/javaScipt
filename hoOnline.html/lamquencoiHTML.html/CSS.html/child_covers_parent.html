@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Covers Parent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            width: 500px;
+            height: 250px;
+            position: relative;
+            background-color: #ccc;
+            margin: 20px;
+            border: 2px solid #333;
+        }
+
+        .box-child {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(128, 0, 128, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .demo-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .info h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .info ul {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thẻ Con Phủ Toàn Bộ Thẻ Cha</h1>
+    
+    <div class="demo-container">
+        <div>
+            <h3>Thẻ cha (500x250px):</h3>
+            <div class="box">
+                <div class="box-child"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info">
+        <h3>Code để thẻ con phủ toàn bộ thẻ cha:</h3>
+        
+        <div class="code-example">
+            <strong>HTML:</strong><br>
+            &lt;div class="box"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="box-child"&gt;&lt;/div&gt;<br>
+            &lt;/div&gt;
+        </div>
+
+        <div class="code-example">
+            <strong>CSS:</strong><br>
+            .box {<br>
+            &nbsp;&nbsp;width: 500px;<br>
+            &nbsp;&nbsp;height: 250px;<br>
+            &nbsp;&nbsp;position: relative;<br>
+            &nbsp;&nbsp;background-color: #ccc;<br>
+            }<br><br>
+            .box-child {<br>
+            &nbsp;&nbsp;width: 80px;<br>
+            &nbsp;&nbsp;height: 80px;<br>
+            &nbsp;&nbsp;background-color: rgba(128, 0, 128, 0.5);<br>
+            &nbsp;&nbsp;position: absolute;<br>
+            &nbsp;&nbsp;top: 0;<br>
+            &nbsp;&nbsp;left: 0;<br>
+            &nbsp;&nbsp;right: 0;<br>
+            &nbsp;&nbsp;bottom: 0;<br>
+            }
+        </div>
+
+        <h3>Giải thích:</h3>
+        <ul>
+            <li><strong>position: relative</strong> trên thẻ cha: Tạo điểm tham chiếu cho thẻ con</li>
+            <li><strong>position: absolute</strong> trên thẻ con: Định vị tuyệt đối</li>
+            <li><strong>top: 0, left: 0, right: 0, bottom: 0</strong>: Kéo dãn thẻ con phủ toàn bộ thẻ cha</li>
+            <li>Thẻ con sẽ có kích thước bằng thẻ cha (500x250px)</li>
+        </ul>
+    </div>
+</body>
+</html> 

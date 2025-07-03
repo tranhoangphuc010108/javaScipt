@@ -1,0 +1,60 @@
+/* vd: 
+%:
+
+font-size: 30px
+
+font-size: 1rem
+tương ứng = 1 * 30 = 30px
+và nó sẽ lấy font-size của thẻ cha gần nhất*/
+
+/* width: chiều rộng
+height: chiều ngang
+
+vw: 100vw = 100% chiều rộng của màn hình
+vh: 100vh = 100% chiều cao của màn hình
+
+em: 1em = 100% font-size của thẻ cha gần nhất
+
+rem: 1rem = 100% font-size của thẻ cha gần nhất
+
+*/
+
+
+
+
+/* var(): có ý nghĩa là biến
+vd:
+
+:root {
+    --text-color: red;
+}
+
+p {
+    color: var(--text-color);
+} 
+    
+linear-gradient: có ý nghĩa là tạo 1 gradient cho background
+vd:
+
+background: linear-gradient(to right, red, blue);
+
+
+rgba: có ý nghĩa là tạo 1 màu với độ trong suốt
+vd: background-color:background-color: rgba(0, 0, 0, 0.5);
+
+calc(): có ý nghĩa là tính toán
+vd: 70% - 30% = 40%
+
+attr(): có ý nghĩa là lấy giá trị của thuộc tính của thẻ
+vd:
+<a href="https://www.google.com">Google</a>
+a {
+    color: attr(href);
+}
+
+
+
+
+
+
+*/

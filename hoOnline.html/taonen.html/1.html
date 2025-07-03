@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .header{
+            width: 100%;
+            height: 100px;
+       background-image: url(https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png);
+       background-size: 100px;
+       background-repeat: no-repeat;
+       background-repeat: repeat-y;
+       background-size: contain;
+       /* tác dụng là hình ảnh sẽ không bị co giãn */
+       background-size: cover;
+       /* tác dụng là hình ảnh sẽ bị co giãn */
+background-origin: padding-box;
+background-origin: border-box;
+/* tác dụng là hình ảnh sẽ bắt đầu từ padding-box */
+/* tác dụng là hình ảnh sẽ bắt đầu từ border-box tràn đầy viền
+*/
+
+
+background-position: top;
+/* tác dụng là hình ảnh sẽ bắt đầu từ top, right, bottom, left */
+background-position: top 20px right 20px;
+/* dịch chuyển hình ảnh theo chiều ngang và chiều dọc 20px*/
+background-position: 0 0;
+/* với số đầu tiên là chiều ngang, số thứ 2 là chiều dọc, x y là tọa độ */
+
+
+       /* tác dụng là không lặp lại hình ảnh */
+       background-image: linear-gradient(90deg, #333, #fff);
+       /* cái đầu tiên là góc, cái thứ 2 là màu sắc , cái thứ 3 là màu sắc */
+       background-image: radial-gradient(circle, #333, #fff);
+       /* cái đầu tiên là hình dạng, cái thứ 2 là màu sắc , cái thứ 3 là màu sắc */
+       background-image: conic-gradient(from 0deg, #333, #fff);
+       /* cái đầu tiên là góc, cái thứ 2 là màu sắc , cái thứ 3 là màu sắc */
+       background-image: repeating-linear-gradient(0, #333, #fff);
+       /* cái đầu tiên là góc, cái thứ 2 là màu sắc , cái thứ 3 là màu sắc */
+
+       background: url(https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png) no-repeat top 20px right 20px;
+        }
+        /* lần lượt là: hình ảnh, không lặp lại, dịch chuyển hình ảnh theo chiều ngang và chiều dọc 20px*/
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+</body>
+</html>

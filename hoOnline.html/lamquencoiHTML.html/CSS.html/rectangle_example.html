@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Element ::after - Hình chữ nhật</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            position: relative;
+            margin: 50px auto;
+        }
+
+        .box {
+            width: 100px;
+            height: 80px;
+            background-color: #3498db;
+            position: relative;
+            margin: 20px;
+        }
+
+        /* Sử dụng pseudo element ::after để tạo hình chữ nhật màu vàng */
+        .box::after {
+            content: "";
+            width: 150px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            top: 50px;
+            left: 120px;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <!-- Hình chữ nhật màu vàng sẽ được tạo bằng ::after -->
+        </div>
+    </div>
+</body>
+</html> 

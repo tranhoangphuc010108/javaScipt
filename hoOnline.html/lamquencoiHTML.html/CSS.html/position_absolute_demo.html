@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Absolute - Tác dụng và cách sử dụng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .demo-section {
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 400px;
+            height: 200px;
+            background-color: #e0e0e0;
+            border: 2px solid #333;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .box {
+            width: 80px;
+            height: 60px;
+            background-color: #ff6b6b;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .absolute-box {
+            position: absolute;
+            background-color: #4ecdc4;
+        }
+
+        .top-left {
+            top: 10px;
+            left: 10px;
+        }
+
+        .top-right {
+            top: 10px;
+            right: 10px;
+        }
+
+        .bottom-left {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .bottom-right {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .full-cover {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 107, 107, 0.7);
+        }
+
+        .info {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            border-left: 4px solid #007bff;
+        }
+
+        .code-example {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Position Absolute - Tác dụng và cách sử dụng</h1>
+
+    <div class="demo-section">
+        <h2>1. Định vị chính xác trong container</h2>
+        <div class="container">
+            <div class="box absolute-box top-left">Top Left</div>
+            <div class="box absolute-box top-right">Top Right</div>
+            <div class="box absolute-box bottom-left">Bottom Left</div>
+            <div class="box absolute-box bottom-right">Bottom Right</div>
+        </div>
+        <div class="info">
+            <strong>Tác dụng:</strong> Định vị chính xác element ở các góc khác nhau của container
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>2. Căn giữa hoàn hảo</h2>
+        <div class="container">
+            <div class="box absolute-box center">Center</div>
+        </div>
+        <div class="info">
+            <strong>Tác dụng:</strong> Căn giữa element một cách hoàn hảo trong container
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>3. Phủ toàn bộ container</h2>
+        <div class="container">
+            <div class="box absolute-box full-cover">Full Cover</div>
+        </div>
+        <div class="info">
+            <strong>Tác dụng:</strong> Element phủ toàn bộ container (overlay, modal, etc.)
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Tác dụng chính của Position Absolute:</h2>
+        <ul>
+            <li><strong>Thoát khỏi luồng document:</strong> Element không chiếm không gian trong layout</li>
+            <li><strong>Định vị chính xác:</strong> Có thể đặt element ở bất kỳ vị trí nào</li>
+            <li><strong>Overlay:</strong> Tạo lớp phủ lên element khác</li>
+            <li><strong>Modal/Popup:</strong> Tạo cửa sổ popup</li>
+            <li><strong>Tooltip:</strong> Tạo tooltip hiển thị khi hover</li>
+            <li><strong>Fixed positioning:</strong> Element cố định ở một vị trí</li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>Cách sử dụng:</h2>
+        <div class="code-example">
+/* Container cha phải có position: relative */
+.container {
+    position: relative;
+    width: 400px;
+    height: 200px;
+}
+
+/* Element con sử dụng position: absolute */
+.absolute-element {
+    position: absolute;
+    top: 10px;      /* Khoảng cách từ trên */
+    left: 10px;     /* Khoảng cách từ trái */
+    right: 10px;    /* Khoảng cách từ phải */
+    bottom: 10px;   /* Khoảng cách từ dưới */
+}
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Lưu ý quan trọng:</h2>
+        <ul>
+            <li><strong>Container cha:</strong> Phải có `position: relative` để làm điểm tham chiếu</li>
+            <li><strong>Z-index:</strong> Có thể sử dụng để kiểm soát thứ tự hiển thị</li>
+            <li><strong>Responsive:</strong> Cần cẩn thận khi sử dụng trên mobile</li>
+            <li><strong>Accessibility:</strong> Đảm bảo element vẫn có thể truy cập được</li>
+        </ul>
+    </div>
+</body>
+</html> 

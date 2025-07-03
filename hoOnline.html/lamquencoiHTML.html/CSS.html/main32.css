@@ -1,0 +1,17 @@
+:root {
+    --text-color: red;
+}
+/* tạo biến cho tất cả các thẻ 
+hoặc đặt đúng 1 biến cho 1 thẻ*/
+
+
+
+h1 {
+    color: var(--text-color);
+}
+h2 {
+    color: var(--text-color);
+}
+h3 {
+    color: var(--text-color);
+}

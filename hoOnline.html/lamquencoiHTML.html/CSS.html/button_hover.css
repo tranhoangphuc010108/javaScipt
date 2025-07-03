@@ -1,0 +1,129 @@
+/* Button cơ bản */
+.button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover */
+.button:hover {
+    background-color: rgba(240, 81, 35, 0.8);
+}
+
+/* Button với style khác */
+.button-primary {
+    padding: 15px 30px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: rgba(240, 81, 35, 0.8);
+    color: white;
+    border-color: rgba(240, 81, 35, 0.8);
+}
+
+/* Button với shadow */
+.button-shadow {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.button-shadow:hover {
+    background-color: rgba(240, 81, 35, 0.8);
+    box-shadow: 0 6px 12px rgba(240, 81, 35, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Button với gradient */
+.button-gradient {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #333, #555);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-gradient:hover {
+    background: linear-gradient(45deg, rgba(240, 81, 35, 0.8), rgba(240, 81, 35, 0.6));
+}
+
+/* Button với border radius lớn */
+.button-rounded {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-rounded:hover {
+    background-color: rgba(240, 81, 35, 0.8);
+    transform: scale(1.05);
+}
+
+/* Button với icon */
+.button-icon {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.button-icon:hover {
+    background-color: rgba(240, 81, 35, 0.8);
+}
+
+/* Button disabled */
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.button:disabled:hover {
+    background-color: #ccc;
+}
+
+/* Button với focus state */
+.button:focus {
+    outline: 2px solid rgba(240, 81, 35, 0.5);
+    outline-offset: 2px;
+}
+
+/* Button với active state */
+.button:active {
+    background-color: rgba(240, 81, 35, 1);
+    transform: scale(0.98);
+} 

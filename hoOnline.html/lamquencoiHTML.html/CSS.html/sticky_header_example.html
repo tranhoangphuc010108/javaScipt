@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Header Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            width: 100%;
+            height: 40px;
+            background-color: #000;
+            position: sticky; /* ✅ Giữ header cố định khi cuộn */
+            top: 0; /* ✅ Giữ ở vị trí trên cùng */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            z-index: 100; /* Đảm bảo header luôn ở trên */
+        }
+
+        .box {
+            height: 2000px; /* Tạo không gian để cuộn trang */
+            background-color: #e0e0e0;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px;
+        }
+
+        .info h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-family: monospace;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        This is a sticky header
+    </div>
+    
+    <div class="info">
+        <h3>Thuộc tính `position: sticky` và `top: 0`</h3>
+        <p>Cuộn trang xuống để xem hiệu ứng. Header sẽ "dính" lại ở trên cùng của màn hình.</p>
+        
+        <div class="code-example">
+            <strong>CSS cho Header:</strong><br>
+            .header {<br>
+            &nbsp;&nbsp;width: 100%;<br>
+            &nbsp;&nbsp;height: 40px;<br>
+            &nbsp;&nbsp;background-color: #000;<br>
+            &nbsp;&nbsp;position: sticky;<br>
+            &nbsp;&nbsp;top: 0;<br>
+            }
+        </div>
+
+        <h3>Giải thích:</h3>
+        <ul>
+            <li><strong>position: sticky;</strong>: Giữ cho element hoạt động như `position: relative` cho đến khi nó cuộn đến một vị trí nhất định, sau đó nó sẽ hoạt động như `position: fixed`.</li>
+            <li><strong>top: 0;</strong>: Xác định vị trí mà element sẽ "dính" lại. Trong trường hợp này là ở trên cùng của viewport.</li>
+        </ul>
+    </div>
+    
+    <div class="box">
+        Scrollable content area (2000px height)
+    </div>
+</body>
+</html> 

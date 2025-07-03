@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- button: tạo ra 1 nút có thể nhấn được
+     Click me: đây là nút người dùng nhấn vào
+     onclick: là 1 thuộc tính của button, khi người dùng nhấn vào nút, thì sẽ chạy hàm alert('Hello!')
+     alert: là 1 hàm trong JavaScript, nó sẽ hiển thị 1 thông báo lên màn hình
+     -->
+    <button onclick="alert('Hello!')">Click me!</button>
+
+    <!-- Phần tử để JavaScript thao tác -->
+    <div id="demo"></div>
+    <!-- id: là 1 thuộc tính của div, nó định danh cho phần tử div, để JavaScript có thể tìm thấy phần tử đó -->
+
+    <script>
+        // script: là 1 thẻ HTML để viết JavaScript
+
+        document.getElementById("demo").innerHTML = "Hello, World!";
+        document.getElementById("demo").style.color = "red";
+
+
+        // document: là 1 đối tượng trong JavaScript, nó đại diện cho trang web
+        // getElementById: là 1 phương thức của đối tượng document, nó dùng để lấy phần tử có id là "demo"
+        // innerHTML: là 1 thuộc tính của phần tử, nó dùng để lấy nội dung của phần tử
+
+        function showMessage() {
+            //function: là 1 hàm trong JavaScript, nó dùng để tạo ra 1 hàm mới
+            //showMessage: là tên của hàm
+           
+
+
+            alert("Hello, World!");
+            //alert: là 1 hàm trong JavaScript, nó sẽ hiển thị 1 thông báo lên màn hình
+
+        }
+    </script>
+    <button onclick="showMessage()">Click me</button>
+</body>
+
+</html>

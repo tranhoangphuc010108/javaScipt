@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <!-- //forEach: lặp qua từng phần tử của mảng
+    // const numbers = [1, 2, 3, 4, 5];
+    // numbers.forEach((number, index ) => {
+    //     console.log(number, index );
+    // });
+    // 
+    //map: lặp qua từng phần tử của mảng và trả về 1 mảng mới
+    // const numbers = [1, 2, 3, 4, 5];
+    // // const numbers2 = numbers.map((number) => number * 2);
+    // // console.log(numbers2);
+
+    // //filter: lặp qua từng phần tử của mảng và trả về 1 mảng mới
+    // numbers
+    // .filter((number) => number > 4)
+    // .filter((number) => number < 10)
+    // .forEach((number, index) => {
+    //     console.log(number, index);
+    // });
+
+    // const numbers = [1,2,3,4,5];
+    // let sum = numbers.reduce((total, number) => total + number, 0);
+    // console.log(sum);
+    //console.log(numbers, index);
+
+    //reduce: lặp qua từng phần tử của mảng và trả về 1 giá trị duy nhất -->
+
+    <script>
+let products = [
+    {
+        id: 1,
+        name: "Product 1",
+        price: 100,
+        quantity: 10
+    },
+    {
+        id: 2,
+        name: "Product 2",
+        price: 200,
+        quantity: 20
+    },
+    {
+        id: 3,
+        name: "Product 3",
+        price: 300,
+        quantity: 30
+    }
+]
+
+let total = products.reduce((total, product) => total + product.price * product.quantity, 0);
+console.log(total);
+
+    </script>
+</body>
+</html>

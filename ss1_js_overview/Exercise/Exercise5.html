@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng này cho phép người dùng chuyển đổi tiền tệ từ VND sang USD hoặc ngược lại.</title>
+</head>
+
+<body>
+    <input type="number" id="amount" placeholder="Nhập số tiền">
+
+    <select id="fromCurrency">
+
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    <!-- // là một menu cho phép người dùng chọn loại tiền tệ gốc (VND hoặc USD) để chuyển đổi. -->
+
+    <select id="toCurrency">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+
+    </select>
+
+    <button onclick="convertCurrency()">Chuyển đổi</button>
+
+    <p id="result"></p>
+
+    <script>
+        function convertCurrency() {
+            const amount = parseFloat(document.getElementById("amount").value);
+            const fromCurrency = document.getElementById("fromCurrency").value;
+            const toCurrency = document.getElementById("toCurrency").value;
+
+            if (isNaN(amount) || amount <= 0) {
+                document.getElementById("result").innerHTML = "Vui lòng nhập số tiền hợp lệ";
+                return;
+            }
+
+            let result;
+            if (fromCurrency === "VND" && toCurrency === "USD") {
+                result = amount / 23000;
+            } else if (fromCurrency === "USD" && toCurrency === "VND") {
+                result = amount * 23000;
+            } else {
+                result = amount;
+            }
+
+            document.getElementById("result").innerHTML = `Kết quả: ${result} ${toCurrency}`;
+        }
+    </script>
+</body>
+
+</html>

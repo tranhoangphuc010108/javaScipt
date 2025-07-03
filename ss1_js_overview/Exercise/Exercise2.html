@@ -1,0 +1,47 @@
+<!-- Ứng dụng này cho phép người dùng nhập điểm số và sau đó xác định xếp loại học viên dựa trên điểm số đó. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input" placeholder="Nhập vào điểm của bạn">
+    <!-- input type="text" là kiểu dữ liệu text cho phép nhập vào các ký tự và số -->
+
+    <button onclick="gradeStudent()">Xếp loại học sinh</button>
+
+    <p id="gradeStudent"></p>
+
+    <script>
+        function gradeStudent() {
+
+            const score = parseFloat(document.getElementById("input").value);
+            // .value là thuộc tính của input để lấy giá trị nhập vào và trả về dưới dạng string
+            // parseFloat là hàm để chuyển đổi string thành số thực
+
+            const grade = document.getElementById("gradeStudent");
+
+            if (isNaN(score) || score < 0 || score > 10) {
+                grade.innerHTML = "Điểm không hợp lệ";
+                // grade.innerHTML = "Điểm không hợp lệ": Cập nhật nội dung HTML của element đó thành "Điểm không hợp lệ"
+
+                return;
+            } else if (score < 5) {
+                grade.innerHTML = "Yếu";
+            } else if (score < 6.5) {
+                grade.innerHTML = "Trung bình";
+            } else if (score < 8) {
+                grade.innerHTML = "Khá";
+            } else {
+                grade.innerHTML = "Giỏi";
+            }
+        }
+    </script>
+</body>
+
+</html>

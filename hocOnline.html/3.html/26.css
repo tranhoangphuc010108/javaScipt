@@ -1,0 +1,66 @@
+/* vd: 
+
+class="title heading"
+thì ta nhập .title hoặc .heading đều được nó đều hiển thị ra cùng 1 kiểu như nhau 
+
+*/
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 1 */
+.heading {
+    color: red;
+    /*  khi đặt id trong css trong trường hợp này thì viết title trước heading sau hay ngược lại đều được 
+ cú pháp bên css là .title.heading hay .heading.title đều được */
+}
+
+/* 2 */
+.box .title {
+    color: blue;
+
+    /* .box .title {
+        câu lệnh này sẽ tác động lên title trong box */
+}
+
+/* h2 {
+    color: green;
+} */
+ /* nó sẽ chọn tất cả thẻ h2 trong trang web tương tự với các thẻ khác*/
+
+/* 3 */
+ h3.tiktok{
+    color: green;
+/* nó sẽ chọn tất cả thẻ h3 có class tiktok */
+
+ }
+
+/* 4 */
+.title1{
+    color: blue;
+    /* nó sẽ chọn tất cả thẻ có class title1 */
+}
+
+
+/* 5 */
+.box > .heo{
+    color: red;
+    /* nó sẽ chọn tất cả thẻ có class heo liên kết trực tiếp với box */
+}
+
+/* 6 */
+.phuc + .phuc{
+    color: red;
+    /* nó sẽ chọn tất cả thẻ có class phuc trừ phuc đầu tiên và nó phải liền kề với phuc đầu tiên */
+
+}
+
+.phuc ~ .phuc{
+    color: red;
+    /* nó sẽ chọn tất cả thẻ có class phuc trừ phuc đầu tiên */
+}

@@ -1,0 +1,77 @@
+/* reset css */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Khi làm thì làm::
+1.từ ngoài vào trong.
+2. từ trên xuống dưới.
+3.Từ tổng quan đến chi tiết.
+.*/
+
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    /* Đặt kiểu chữ mặc định (font chữ) cho toàn bộ trang web là Helvetica.
+Nếu máy tính không có Helvetica, sẽ dùng Arial.
+Nếu không có cả hai, sẽ dùng bất kỳ font chữ không chân (sans-serif) nào có sẵn trên máy. */
+}
+
+
+
+/* những câu hỏi cần nhớ
+1.vị trí
+2.màu sắc
+3.kích thước
+4.kiểu dáng(tròn , vuông,...)/
+
+*/
+
+
+#nav {
+    /* tác dụng là áp dụng cho nav */
+}
+
+#nav li {
+    /* tác dụng là áp dụng cho tất cả các li trong nav */
+    display: inline-block;
+    /* tác dụng là để cho các li nằm ngang với nhau */
+
+}
+
+#nav .subnav {
+    /* Áp dụng cho tất cả các phần tử có class là subnav nằm bên trong phần tử có id là nav */
+    display: inline-block;
+    /*  */
+}
+
+#nav li a {
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+    /*  line-height: 50px; tác dụng là để cho các li bị đẩy xuống dưới*/
+
+    padding: 0 24px;
+    /*     padding: 0 24px; nghĩa là trên dưới là 0, trái phải là 24px*/
+display: inline-block;
+}
+
+#main {}
+
+
+#header {
+    height: 100px;
+    background-color: #000;
+
+}
+
+#slider {}
+
+#content {}
+
+#footer {}
+
+
+/* khi xài "alt và con trỏ chuột" ta sẽ được 1 khung để chọn nhiều phần tử cùng lúc #*/

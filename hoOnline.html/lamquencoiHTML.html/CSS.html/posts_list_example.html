@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts List with Margins</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .posts-list {
+            margin-top: 32px; /* ✅ Thêm margin top 32px */
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .post-item {
+            margin-bottom: 16px; /* ✅ Thêm margin bottom 16px */
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .post-item h3 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .post-item .desc {
+            margin-top: 10px; /* ✅ Thêm margin top 10px */
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .post-item .min-read {
+            margin-top: 12px; /* ✅ Thêm margin top 12px */
+            color: #999;
+            font-size: 14px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Blog Posts</h1>
+    </div>
+    
+    <div class="posts-list">
+        <div class="post-item">
+            <h3>Getting Started with CSS</h3>
+            <div class="desc">
+                Learn the basics of CSS styling and how to create beautiful web pages with cascading style sheets.
+            </div>
+            <div class="min-read">5 min read</div>
+        </div>
+        
+        <div class="post-item">
+            <h3>JavaScript Fundamentals</h3>
+            <div class="desc">
+                Explore the core concepts of JavaScript programming language and start building interactive websites.
+            </div>
+            <div class="min-read">8 min read</div>
+        </div>
+        
+        <div class="post-item">
+            <h3>HTML Best Practices</h3>
+            <div class="desc">
+                Discover the best practices for writing clean, semantic HTML code that's accessible and SEO-friendly.
+            </div>
+            <div class="min-read">6 min read</div>
+        </div>
+    </div>
+</body>
+</html> 

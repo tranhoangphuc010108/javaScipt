@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem</title>
+    <link rel="stylesheet" href="main1.css">
+</head>
+
+<body>
+    <div>
+
+        <div class="card">
+            <h3 class="heading">Saved!</h3>
+            <p class="description">Looks like you've saved this to your list</p>
+            <div class="button">Ok, cool</div>
+        </div>
+
+
+
+        <!-- BEM -->
+
+        <div class="card card--success">
+            <!-- card--success: nghĩa là thay đổi modifier của card thành success:thành công -->
+            <h3 class="card__heading">Saved!</h3>
+            <p class="card__description">Looks like you've saved this to your list</p>
+            <div class="card__button">Ok, cool</div>
+        </div>
+
+        <div class="card card--error">
+            <!-- card--success: nghĩa là thay đổi modifier của card thành success:thành công -->
+            <h3 class="card__heading">Saved!</h3>
+            <p class="card__description">Looks like you've saved this to your list</p>
+            <div class="card__button">Ok, cool</div>
+        </div>
+
+    </div>
+</body>

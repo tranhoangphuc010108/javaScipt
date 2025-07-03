@@ -1,0 +1,64 @@
+<!-- Ứng dụng này cho phép người dùng nhập số giây và sau đó thực hiện đếm ngược. -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <input type="text" id="input" placeholder="Nhập số giây">
+
+    <button onclick="startCountdown()">Đếm ngược</button>
+
+    <p id="countdownResult"></p>
+
+    <script>
+        let countdownInterval;
+        function startCountdown() {
+        
+        clearInterval(countdownInterval);
+        // Dừng đếm ngược trước đó nếu có
+        // clearInterval(countdownInterval) dùng để dừng việc thực thi lặp lại của setInterval
+
+        const inputValue = document.getElementById("input").value.trim();
+        //const:Khai báo biến không thể thay đổi giá trị
+        //let:Khai báo biến có thể thay đổi giá trị
+// trim()
+// Là gì: Phương thức loại bỏ khoảng trắng ở đầu và cuối chuỗi
+// Tác dụng: Xóa spaces, tabs, newlines ở đầu và cuối
+// Không ảnh hưởng: Khoảng trắng ở giữa chuỗi
+
+        const resultElement = document.getElementById("countdownResult");
+
+        if (!inputValue) {
+                resultElement.innerHTML = "Vui lòng nhập số giây";
+                return;
+                // khi người dùng chưa nhập số vào thì nó sẽ chạy code này
+            }
+
+        let seconds = parseInt(document.getElementById("input").value);
+//parseInt:Chuyển đổi chuỗi thành số nguyên
+       
+        if (isNaN(seconds) || seconds <= 0) {
+            resultElement.innerHTML = "Vui lòng nhập số giây hợp lệ";
+            return;
+        }
+        
+        countdownInterval = setInterval(function() {
+
+            resultElement.innerHTML = seconds + " giây";
+
+            seconds--;
+
+            if (seconds < 0) {
+                clearInterval(countdownInterval);
+                resultElement.innerHTML = "Hết giờ!";
+            }
+        }, 1000);
+
+
+        }
+    </script>
+ </body>
+ </html>

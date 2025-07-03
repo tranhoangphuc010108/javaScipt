@@ -1,0 +1,7 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    /* padding: 0; tác dụng là để cho các phần tử không có padding */
+    margin: 0;
+    box-sizing: border-box;
+}

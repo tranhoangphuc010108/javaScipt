@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng này sẽ tính số ngày trong một tháng dựa trên tháng và năm người dùng nhập.</title>
+</head>
+
+<body>
+    <input type="number" style="width: 200px;" id="monthInPut" min="1" max="12" placeholder="Nhập vào tháng 1-12" />
+    <input type="number" style="width: 200px;" id="yearInPut" placeholder="Nhập vào năm" />
+
+    <button onclick="calculateDays()">Số ngày</button>
+
+    <p id="result"></p>
+
+
+    <script>
+        function calculateDays() {
+            const month = parseInt(document.getElementById("monthInPut").value);
+            const year = parseInt(document.getElementById("yearInPut").value);
+            const resultElement = document.getElementById("result");
+
+            if (isNaN(month) || month < 1 || month > 12) {
+                resultElement.innerText = "Nhập vào tháng 1-12 xin nhập lại!";
+                return;
+            }
+            if (isNaN(year)) {
+                resultElement.innerText = "Nhập vào năm hợp lệ xin nhập lại!";
+                return;
+            }
+
+
+
+            let day;
+            switch (month) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    day = 31;
+                    break;
+
+
+                case 4: case 6: case 9: case 11:
+                    day = 30;
+                    break;
+                case 2:
+                    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                        day = 29;
+                    } else {
+                        day = 28;
+                    }
+                    break;
+            }
+            resultElement.innerText = `Số ngày trong tháng ${month} năm ${year} là: ${day}`;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!-- Ứng dụng này cho phép người dùng nhấn vào nút và đếm số lần nhấn -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="ClickCounter()">Click me!</button>
+
+    <p id="count">0</p>
+
+    <script>
+        let count = 0;
+
+        function ClickCounter() {
+            count++;
+            document.getElementById('count').innerHTML = count;
+
+            //Cung cấp các phương thức để truy cập và thao tác với các element trong trang
+            //Ví dụ: document.body, document.head, document.title
+
+            // Tìm element có id="count" trong HTML
+            //document.getElementById('count')
+
+            //.innerHTML = count: Cập nhật nội dung HTML của element đó thành giá trị mới của count
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>việc cần làm</h1>
+    <input type="text" id="input" />
+    <button id="add" onclick="addToDo()">thêm mới</button>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Học HTML</td>
+                <td>
+                    <button>Xóa></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+
+        let todos = [
+            {
+                id: 1,
+                title: "Học HTML"
+            },
+            {
+                id: 2,
+                title: "Học CSS"
+            },
+            
+        ];
+
+        function displayToDos() {
+            let tbodyHtml = "";
+            todos.forEach(function (todo, index) {
+                tbodyHtml += `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${todo.title}</td>
+                    <td>
+                        <button onclick="deleteToDo(${todo.id})">Xóa</button>
+                    </td>
+                </tr>
+                `;
+            });
+            document.querySelector("tbody").innerHTML = tbodyHtml;
+        }
+        displayToDos();
+
+        function addToDo() {
+            let todoName = document.getElementById("input").value;
+            todos.push({
+                id: Math.floor(Math.random() * 1000000),
+                title: todoName,
+            });
+            document.getElementById("input").value = "";
+            displayToDos();
+        }
+        function deleteToDo(id, name) {
+            if (confirm("Bạn có chắc chắn muốn xóa việc  không?")) {
+                todos = todos.filter(function (todo) {
+                    return todo.id != id;
+                });
+                displayToDos();
+            }
+        }
+    </script>
+</body>
+
+</html>

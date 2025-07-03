@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng này sẽ tự động tạo ra một số nguyên từ 1 đến 10 và yêu cầu người dùng đoán số đó trong vòng tối đa 3
+        lần.</title>
+</head>
+
+<body>
+    <button onclick="guessNumber()">Đoán số</button>
+
+    <p id="guessResult"></p>
+
+    <script>
+        let attempts = 3;
+        //số lượt chơi
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+        //    math.floor: làm tròn xuống vd: 1.7 => 1
+        //    math.random: tạo ra 1 số ngẫu nhiên từ 0,0 -> 0,9999999999999999
+// hay từ (0,1)
+
+        function guessNumber() {
+            if (attempts > 0) {
+                const guess = parseInt(prompt("Nhập số bạn đoán:"));
+                //prompt cho phép người dùng nhập vào string
+                if (isNaN(guess) || guess < 1 || guess > 10) {
+                    document.getElementById("guessNumber").innerHTML = "Vui lòng nhập số từ 1 đến 10";
+                    return;
+                }
+
+                attempts--;
+
+                if (guess === randomNumber) {
+                    document.getElementById("guessResult").innerHTML = "Chúc mừng! Bạn đã đoán đúng số, số đó là: " + randomNumber ;
+                    attempts = 0;
+                } else {
+                    document.getElementById("guessResult").innerHTML = "Bạn đã đoán sai, vui lòng thử lại. Số lượt còn lại: " + attempts;
+                } 
+            } else {
+                document.getElementById("guessResult").innerHTML = "Bạn đã hết lượt chơi. Số đúng là: " + randomNumber;
+            }
+        }
+        console.log(randomNumber);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Absolute - Child Covers Parent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            width: 500px;
+            height: 250px;
+            position: relative;
+            background-color: #ccc;
+            margin: 20px;
+            border: 2px solid #333;
+        }
+
+        .box-child {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(128, 0, 128, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .demo-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .info h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-family: monospace;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thẻ Con Phủ Toàn Bộ Thẻ Cha bằng Position</h1>
+    
+    <div class="demo-container">
+        <div>
+            <h3>Kết quả:</h3>
+            <div class="box">
+                <div class="box-child"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info">
+        <h3>Code CSS hoàn chỉnh:</h3>
+        
+        <div class="code-example">
+            <strong>Thẻ cha:</strong><br>
+            .box {<br>
+            &nbsp;&nbsp;width: 500px;<br>
+            &nbsp;&nbsp;height: 250px;<br>
+            &nbsp;&nbsp;position: relative;<br>
+            &nbsp;&nbsp;background-color: #ccc;<br>
+            }
+        </div>
+
+        <div class="code-example">
+            <strong>Thẻ con:</strong><br>
+            .box-child {<br>
+            &nbsp;&nbsp;width: 80px;<br>
+            &nbsp;&nbsp;height: 80px;<br>
+            &nbsp;&nbsp;background-color: rgba(128, 0, 128, 0.5);<br>
+            &nbsp;&nbsp;position: absolute;<br>
+            &nbsp;&nbsp;top: 0;<br>
+            &nbsp;&nbsp;left: 0;<br>
+            &nbsp;&nbsp;right: 0;<br>
+            &nbsp;&nbsp;bottom: 0;<br>
+            }
+        </div>
+
+        <h3>Giải thích thuộc tính position:</h3>
+        <ul>
+            <li><strong>position: relative</strong> trên thẻ cha: Tạo điểm tham chiếu cho thẻ con</li>
+            <li><strong>position: absolute</strong> trên thẻ con: Định vị tuyệt đối so với thẻ cha</li>
+            <li><strong>top: 0, left: 0, right: 0, bottom: 0</strong>: Kéo dãn thẻ con phủ toàn bộ thẻ cha</li>
+        </ul>
+
+        <h3>Kết quả:</h3>
+        <ul>
+            <li>Thẻ con sẽ có kích thước 500x250px (bằng thẻ cha)</li>
+            <li>Màu purple trong suốt phủ lên màu xám của thẻ cha</li>
+            <li>Thẻ con phủ toàn bộ thẻ cha</li>
+        </ul>
+    </div>
+</body>
+</html> 

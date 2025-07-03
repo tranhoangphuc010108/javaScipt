@@ -1,0 +1,31 @@
+#title {
+    color: red;
+    font-size: 30px;
+}
+.class1 {
+    color: blue;
+    font-size: 30px;
+}
+
+/* box1 là con của box và chỉ cần box1 nằm trong box thì nó sẽ có màu green */
+.box .box1 {
+    color: green;
+}
+
+/* .box > .box1: tương tự nhưng nó sẽ chọn lấy box1 nằm trực tiếp trong box */
+
+/* .box + .box1: chọn lấy box1 nằm "liền kề"  box */
+
+/* .box ~ .box1: chọn lấy tất cả các box1 nằm sau box */
+
+/*    * chọn tất cả các thẻ */
+
+/*    vd: h1.class1 chọn tất cả các thẻ h1 có class là class1 */
+
+/* vd: muốn thẻ có thuộc tính chung thì
+.tiltle 1,tiltle 2,tiltle 3,tiltle 4 {
+color = red;
+}
+như này chúng sẽ có màu chung là red
+
+*/

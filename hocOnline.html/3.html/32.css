@@ -1,0 +1,9 @@
+:root{
+    --primary-color: red;
+    /* :root là 1 thẻ html như 1 hàm khai báo biến */
+}
+
+
+h1 {
+    color: var(--primary-color);
+}

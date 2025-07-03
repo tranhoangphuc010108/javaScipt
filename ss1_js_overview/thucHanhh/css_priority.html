@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Độ ưu tiên trong CSS</title>
+    <style>
+        /* CSS ban đầu - màu đỏ */
+        h1 {
+            color: red;
+        }
+
+        /* Cách 1: Sử dụng cùng selector nhưng viết sau */
+        h1 {
+            color: #333;
+        }
+
+        /* Cách 2: Sử dụng selector cụ thể hơn */
+        body h1 {
+            color: #333;
+        }
+
+        /* Cách 3: Sử dụng ID selector (độ ưu tiên cao hơn) */
+        #main-title {
+            color: #333;
+        }
+
+        /* Cách 4: Sử dụng class selector */
+        .title {
+            color: #333;
+        }
+
+        /* Cách 5: Sử dụng inline style (độ ưu tiên cao nhất) */
+        /* style="color: #333;" */
+
+        /* Cách 6: Sử dụng !important */
+        h1 {
+            color: #333 !important;
+        }
+
+        /* Cách 7: Kết hợp nhiều selector */
+        body div h1 {
+            color: #333;
+        }
+
+        /* Cách 8: Sử dụng attribute selector */
+        h1[class] {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- Thẻ tiêu đề ban đầu có màu đỏ -->
+        <h1>Tiêu đề ban đầu (màu đỏ)</h1>
+        
+        <!-- Thẻ tiêu đề với ID -->
+        <h1 id="main-title">Tiêu đề với ID (màu #333)</h1>
+        
+        <!-- Thẻ tiêu đề với class -->
+        <h1 class="title">Tiêu đề với class (màu #333)</h1>
+        
+        <!-- Thẻ tiêu đề với inline style -->
+        <h1 style="color: #333;">Tiêu đề với inline style (màu #333)</h1>
+    </div>
+
+    <div style="margin-top: 30px; padding: 20px; background-color: #f5f5f5; border-radius: 10px;">
+        <h2>Giải thích độ ưu tiên CSS:</h2>
+        <ol>
+            <li><strong>Inline style</strong> (style="color: #333;") - Độ ưu tiên cao nhất</li>
+            <li><strong>ID selector</strong> (#main-title) - Độ ưu tiên rất cao</li>
+            <li><strong>Class selector</strong> (.title) - Độ ưu tiên cao</li>
+            <li><strong>Element selector</strong> (h1) - Độ ưu tiên thấp</li>
+            <li><strong>!important</strong> - Ghi đè tất cả (không khuyến khích)</li>
+        </ol>
+        
+        <h3>Quy tắc tính điểm độ ưu tiên:</h3>
+        <ul>
+            <li>Inline style: 1000 điểm</li>
+            <li>ID selector: 100 điểm</li>
+            <li>Class selector: 10 điểm</li>
+            <li>Element selector: 1 điểm</li>
+            <li>Universal selector (*): 0 điểm</li>
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript để minh họa cách thay đổi màu động
+        function changeColor() {
+            const titles = document.querySelectorAll('h1');
+            titles.forEach(title => {
+                title.style.color = '#333';
+            });
+        }
+
+        function resetColor() {
+            const titles = document.querySelectorAll('h1');
+            titles.forEach(title => {
+                title.style.color = 'red';
+            });
+        }
+    </script>
+
+    <div style="margin-top: 20px;">
+        <button onclick="changeColor()" style="padding: 10px 20px; margin-right: 10px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Thay đổi màu bằng JavaScript
+        </button>
+        <button onclick="resetColor()" style="padding: 10px 20px; background-color: red; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Reset về màu đỏ
+        </button>
+    </div>
+</body>
+</html> 
