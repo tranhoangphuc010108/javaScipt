@@ -1,0 +1,10 @@
+Arrow functions: Cú pháp ngắn gọn để định nghĩa hàm.
+Template strings: Cho phép tạo chuỗi một cách linh hoạt và dễ đọc hơn.
+Destructuring assignments: Gán giá trị từ các mảng hoặc đối tượng vào các biến riêng lẻ một cách thuận tiện.
+const/let: Giới thiệu cách khai báo biến mới (const, let) giúp quản lý phạm vi biến tốt hơn.
+Default parameters: Cho phép thiết lập giá trị mặc định cho các tham số của hàm.
+Import and export: Quản lý module dễ dàng và linh hoạt hơn.
+Promises: Đối phó với các thao tác bất đồng bộ một cách hiệu quả hơn.
+Rest parameter: Xử lý số lượng tham số không xác định trong hàm một cách thuận tiện.
+Spread operator: Truyền các phần tử của mảng hoặc đối tượng vào một cấu trúc khác một cách tiện lợi.
+Classes: Cung cấp cú pháp tiện ích hơn để định nghĩa và sử dụng các lớp trong JavaScript.

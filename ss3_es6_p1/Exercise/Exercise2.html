@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cho mảng sau:
+
+        const products = [
+        { id: 1, name: "iPhone 15 Pro Max", price: 1499.99 },
+        { id: 2, name: "Samsung Galaxy S22 Ultra", price: 1399.99 },
+        { id: 3, name: "Google Pixel 6 Pro", price: 899.99 },
+        { id: 4, name: "OnePlus 10 Pro", price: 1099.99 },
+        { id: 5, name: "Xiaomi Mi 12", price: 999.99 },
+        ];</title>
+</head>
+
+<body>
+    <script>
+        
+
+        const products = [
+            { id: 1, name: "iPhone 15 Pro Max", price: 1499.99 },
+            { id: 2, name: "Samsung Galaxy S22 Ultra", price: 1399.99 },
+            { id: 3, name: "Google Pixel 6 Pro", price: 899.99 },
+            { id: 4, name: "OnePlus 10 Pro", price: 1099.99 },
+            { id: 5, name: "Xiaomi Mi 12", price: 999.99 },
+        ];
+
+
+//         Thực hiện các chức năng
+        // a. In ra thông tin tên và giá của sản phẩm
+console.log("tên và giá sản phẩm");
+products.forEach((product) => 
+{console.log(`${product.name}  giá:  ${product.price} USD`);
+});
+// //.forEach(...)
+// forEach() là một hàm dùng để duyệt qua từng phần tử trong mảng.
+
+// Nó sẽ chạy một lần cho mỗi phần tử trong mảng.
+
+
+        // b. Giảm giá tất cả sản phẩm xuống 5%
+        console.log("Giảm giá 5% cho tất cả sản phẩm");
+products.forEach((product) =>  {
+    const discountedPrice = (product.price * 0.95);
+    console.log(`${product.name}  giá sau giảm:  ${discountedPrice} USD`);
+});
+
+        // c. Lọc ra những sản phẩm giá dưới 1000 USD
+        console.log("Sản phẩm có giá dưới 1000 USD:");
+        const under1000USD = products.filter((product) => product.price < 1000);
+console.log(under1000USD);
+
+        // d. Tính tổng giá tất cả sản phẩm
+
+
+        const sumPrice = products.reduce(
+            (sum, product) => sum + product.price,0);
+            console.log(`Tổng giá tất cả sản phẩm: ${sumPrice} USD`);
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         a. In ra tất cả các giá trị được truyền vào
+        // Viết một hàm nhận tham số rest và in ra tất cả các giá trị được truyền vào.
+        function logAllValue(...args) {
+            console.log("tất cả các giá trị được truyền vào");
+            args.forEach((value) => {
+                console.log(value);
+
+            });
+        }
+        logAllValue([1, 2, 5], "chuỗi", true, 34);
+
+
+        // b. Tính tổng các số sử dụng Rest Parameter
+        // Viết một hàm nhận bất kỳ số lượng tham số nào (sử dụng Rest Param) và trả về tổng của tất cả các số đó.
+        function sumNumber(...number) {
+            return number.reduce((total, num) => total + num, 0);
+        }
+const total = sumNumber(3,5,4,2);
+console.log("Tổng của các số sử dụng Rest Parameter là: ", total)
+
+        // c. Nối hai mảng bằng Spread Operator
+        // Tạo hai mảng và sử dụng Spread Operator để nối chúng lại với nhau.
+
+
+
+        // d. Tạo bản sao của mảng sử dụng Spread Operator
+        // Tạo một mảng và sau đó tạo một bản sao của mảng đó bằng cách sử dụng Spread Operator.
+
+
+
+    </script>
+</body>
+
+</html>
