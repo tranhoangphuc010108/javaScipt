@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Cho mảng 2 chiều sau
+[
+    ['id', 1],
+    ['name', 'Nguyễn Văn A'],
+    ['score', 9.6],
+]
+Chuyển thành object
+{
+    id: 1,
+    name: 'Nguyễn Văn A',
+    score: 9.6 -->
+
+
+    <script>
+        const infoStudent = [
+            ['id', 1],
+        ['name', 'Nguyễn Văn A'],
+            ['score', 9.6],
+];
+
+let student = {};
+
+infoStudent.forEach((item) => {
+    student = {...student, [item[0]]: item[1]};
+});
+console.log(student);
+    </script>
+</body>
+
+</html>

@@ -25,18 +25,25 @@
         // Viết một hàm nhận bất kỳ số lượng tham số nào (sử dụng Rest Param) và trả về tổng của tất cả các số đó.
         function sumNumber(...number) {
             return number.reduce((total, num) => total + num, 0);
+            // reduce() là một hàm của mảng, dùng để gộp các phần tử 
+            // lại thành 1 giá trị duy nhất, ví dụ như tổng, tích, chuỗi, v.v.
         }
-const total = sumNumber(3,5,4,2);
-console.log("Tổng của các số sử dụng Rest Parameter là: ", total)
+        const total = sumNumber(3, 5, 4, 2);
+        console.log("Tổng của các số sử dụng Rest Parameter là: ", total)
 
         // c. Nối hai mảng bằng Spread Operator
         // Tạo hai mảng và sử dụng Spread Operator để nối chúng lại với nhau.
-
-
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 6, 3];
+        const combinedArray = [...arr1, ...arr2];
+        console.log(" Mảng sau khi nối:", combinedArray);
 
         // d. Tạo bản sao của mảng sử dụng Spread Operator
         // Tạo một mảng và sau đó tạo một bản sao của mảng đó bằng cách sử dụng Spread Operator.
+const clonedArray = [...combinedArray];
 
+console.log("Mảng gốc:", combinedArray);
+console.log("Bản sao:", clonedArray);
 
 
     </script>

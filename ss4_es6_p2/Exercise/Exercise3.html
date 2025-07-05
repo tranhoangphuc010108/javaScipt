@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const person = {
+            firstName: "John",
+            lastName: "Wick",
+        };
+
+        // Hàm hiển thị thông tin
+        function displayInfo(email, phone) {
+            console.log(`Full Name: ${this.firstName} ${this.lastName}`);
+            console.log(`Email: ${email}`);
+            console.log(`Phone: ${phone}`);
+        }
+
+        
+        displayInfo.call(person, "@gmail.com", "676767");
+
+        // Sử dụng apply để thiết lập ngữ cảnh của 'this'
+        const infoArray = ["@example.com", "123321"];
+        displayInfo.apply(person, infoArray);
+
+        // Sử dụng bind để tạo một hàm mới với ngữ cảnh của 'this' đã được thiết lập
+        const boundFunction = displayInfo.bind(
+            person,
+            "@goolge.com",
+            "999999"
+        );
+        boundFunction();
+//                          	call()	                                  apply()	                   bind()
+// 🕒 Gọi hàm ngay?	            ✅ Có	                            ✅ Có	                ❌ Không (trả về hàm mới)
+// 📦 Cách truyền tham số	Từng đối số riêng lẻ (a, b, c)      	Một mảng ([a, b, c])    	Từng đối số (a, b, c) hoặc không
+// 🔄 Trả về gì?	Kết quả thực thi của hàm                    Kết quả thực thi của hàm	        Một hàm mới với this cố định
+
+
+
+    </script>
+</body>
+
+</html>

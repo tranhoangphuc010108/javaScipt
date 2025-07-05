@@ -17,7 +17,7 @@
 
 <body>
     <script>
-        
+
 
         const products = [
             { id: 1, name: "iPhone 15 Pro Max", price: 1499.99 },
@@ -28,37 +28,37 @@
         ];
 
 
-//         Thực hiện các chức năng
+        //         Thực hiện các chức năng
         // a. In ra thông tin tên và giá của sản phẩm
-console.log("tên và giá sản phẩm");
-products.forEach((product) => 
-{console.log(`${product.name}  giá:  ${product.price} USD`);
-});
-// //.forEach(...)
-// forEach() là một hàm dùng để duyệt qua từng phần tử trong mảng.
+        console.log("tên và giá sản phẩm");
+        products.forEach((product) => {
+            console.log(`${product.name}  giá:  ${product.price} USD`);
+        });
+        // //.forEach(...)
+        // forEach() là một hàm dùng để duyệt qua từng phần tử trong mảng.
 
-// Nó sẽ chạy một lần cho mỗi phần tử trong mảng.
+        // Nó sẽ chạy một lần cho mỗi phần tử trong mảng.
 
 
         // b. Giảm giá tất cả sản phẩm xuống 5%
         console.log("Giảm giá 5% cho tất cả sản phẩm");
-products.forEach((product) =>  {
-    const discountedPrice = (product.price * 0.95);
-    console.log(`${product.name}  giá sau giảm:  ${discountedPrice} USD`);
-});
+        products.forEach((product) => {
+            const discountedPrice = (product.price * 0.95);
+            console.log(`${product.name}  giá sau giảm:  ${discountedPrice} USD`);
+        });
 
         // c. Lọc ra những sản phẩm giá dưới 1000 USD
         console.log("Sản phẩm có giá dưới 1000 USD:");
         const under1000USD = products.filter((product) => product.price < 1000);
-console.log(under1000USD);
+        console.log(under1000USD);
 
         // d. Tính tổng giá tất cả sản phẩm
 
 
         const sumPrice = products.reduce(
-            (sum, product) => sum + product.price,0);
-            console.log(`Tổng giá tất cả sản phẩm: ${sumPrice} USD`);
-        
+            (sum, product) => sum + product.price, 0);
+        console.log(`Tổng giá tất cả sản phẩm: ${sumPrice} USD`);
+
     </script>
 </body>
 

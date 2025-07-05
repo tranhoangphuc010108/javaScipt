@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="module">
+ // main.js - File chính sử dụng các hàm từ file mathOperations.js
+    
+    // Import các hàm từ mathOperations.js
+    import { sum, subtract, multiply, divide } from "./Exercise.js";
+   
+    // Sử dụng các hàm đã import
+    const resultSum = sum(10, 5);
+    console.log("Tổng:", resultSum);
+    
+    const resultSubtract = subtract(10, 5);
+    console.log("Hiệu:", resultSubtract);
+    
+    const resultMultiply = multiply(10, 5);
+    console.log("Tích:", resultMultiply);
+    
+    const resultDivide = divide(10, 5);
+    console.log("Thương:", resultDivide);
+    </script> 
+</body>
+</html>
+   

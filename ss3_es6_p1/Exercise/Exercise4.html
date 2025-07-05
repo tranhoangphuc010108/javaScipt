@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         a. Lấy giá trị từ một object sử dụng Destructuring
+        // Tạo một object và sử dụng Destructuring để lấy giá trị của một key từ object đó.
+        const myObject = { key: "value", id: 1, name: "John" };
+        const { key } = myObject;
+        console.log("Giá trị của key từ object đó: ", key);
+
+
+        // b. Trích xuất các phần tử từ một mảng sử dụng Destructuring
+        // Tạo một mảng và sử dụng Destructuring để trích xuất các phần tử từ mảng đó.
+        const array = [1, 2, 3, 4];
+        const [firstElement, secondElementr] = array;
+        console.log("Phần tử đầu tiên trong mảng:", firstElement);
+        console.log("Phần tử thứ 2 trong mảng:", secondElement);
+
+
+        // c. Gán mặc định cho biến khi Destructuring object
+        // Tạo một object và sử dụng Destructuring để gán mặc định cho biến nếu key không tồn tại trong object.
+        const myObjects = { id: 1, name: "John" };
+        const { id, age = 25 } = myObjects;
+        console.log("id:", id);
+        console.log("age", age);
+
+
+        // d. Destructuring với nested object và nested array
+        // Tạo một nested object và một nested array, sau đó sử dụng
+        //  Destructuring để trích xuất giá trị từ nested object và nested array.
+
+        // Khai báo một object lồng nhau
+        const nestedObject = {
+            outer: {
+                inner: "Nested Value",
+            },
+        };
+
+        // Phân rã object lồng nhau để lấy giá trị inner
+        const {
+            outer: { inner },
+        } = nestedObject;
+
+        console.log("Giá trị từ nested object:", inner);
+
+
+
+        // Khai báo một mảng có mảng lồng bên trong
+        const nestedArray = [1, [2, 3], 4];
+
+        // Phân rã mảng: bỏ phần tử đầu (1), lấy mảng con [2, 3]
+        const [, [nestedValue1, nestedValue2]] = nestedArray;
+
+        console.log("Giá trị từ nested array:", nestedValue1, nestedValue2);
+
+
+        // e. Destructuring với Rest Param
+        // Tạo một object hoặc một mảng có nhiều phần tử, sau đó sử dụng Destructuring với Rest Param để lấy các giá trị còn lại.
+        const object1 = { a: 4, c: 23, s: 26, w: 14 }
+        const { a, c, ...end } = object1;
+
+        console.log("a:", a);
+        console.log("c:", c);
+        console.log("còn lại: ", end);
+
+        // f. Destructuring với function return
+        // Tạo một hàm trả về một object hoặc một mảng, sau đó sử dụng Destructuring để trích xuất giá trị trả về từ hàm đó.
+        function returnObject() {
+            return { id1: 2, name1: "Jack", age1: 23 };
+
+        }
+
+        const { id1, name1, age1 } = returnObject();
+        console.log("id:", id1);
+        console.log("name:", name1);
+        console.log("age:", age1);
+    </script>
+</body>
+
+</html>

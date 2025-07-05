@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const CounterModule = (function () {
+            // Biến được bảo vệ khỏi truy cập từ bên ngoài module
+            let count = 0;
+
+            // Phương thức public để tăng giá trị biến count
+            function increment() {
+                count++;
+            }
+
+            // Phương thức public để giảm giá trị biến count
+            function decrement() {
+                count--;
+            }
+
+            // Phương thức public để lấy giá trị hiện tại của biến count
+            function getCount() {
+                return count;
+            }
+
+            // Trả về các phương thức public để sử dụng bên ngoài module
+            return {
+                increment,
+                decrement,
+                getCount,
+            };
+        })();
+
+        // Sử dụng các phương thức từ module
+        console.log(CounterModule.getCount()); 
+
+        CounterModule.increment();
+        CounterModule.increment();
+        CounterModule.increment();
+        console.log(CounterModule.getCount()); 
+
+        CounterModule.decrement();
+        console.log(CounterModule.getCount()); 
+    </script>
+</body>
+
+</html>
